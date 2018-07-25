@@ -1,4 +1,4 @@
-## Contributing to amadeus-ws-client
+##  Contributing to amadeus-ws-client
 
 First of all, thanks for your interest in contributing to this library!
 
