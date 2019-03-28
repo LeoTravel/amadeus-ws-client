@@ -128,6 +128,7 @@ class MasterPricerTravelBoardSearch extends BaseMasterPricerMessage
      */
     protected function loadOptions($options)
     {
+
         $this->loadNumberOfUnits($options);
 
         $this->loadFareOptions($options);
@@ -206,9 +207,16 @@ class MasterPricerTravelBoardSearch extends BaseMasterPricerMessage
         if (!empty($opt->segmentReference)) {
             $segmentRef = $opt->segmentReference;
         }
-
+        if (!empty($opt->flightInfoPNR)) {
+            $flightInfoPNR = $opt->flightInfoPNR;
+        }
         $tmpItinerary = new MasterPricer\Itinerary($segmentRef);
-
+        if (!empty($opt->flightInfoPNR)) {
+            $tmpItinerary->flightInfoPNR = $opt->flightInfoPNR;
+        }
+        if (!empty($opt->requestedSegmentAction)) {
+            $tmpItinerary->requestedSegmentAction = $opt->requestedSegmentAction;
+        }
         $tmpItinerary->departureLocalization = new MasterPricer\DepartureLocalization(
             $opt->departureLocation
         );

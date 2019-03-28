@@ -142,7 +142,6 @@ class MPItinerary extends LoadParamsFromArray
     public $noAirportChange = false;
 
 
-
     /**
      * Cabin class requested for the entire itinerary
      *
@@ -160,4 +159,8 @@ class MPItinerary extends LoadParamsFromArray
      * @var string
      */
     public $cabinOption;
+
+    public $flightInfoPNR = [];
+
+    public $requestedSegmentAction;
 }
